@@ -1,0 +1,68 @@
+/* CSS Document */
+
+/*
+	Name: TikBulk TikTok Bulk Videos Downloader 2020
+	Description: TikTok Bulk Video Downloader
+	Version: 1.0
+	Author: divstack.org
+
+*/
+
+/* ---------------------------------------- */
+/*             TABLE OF CONTENTS
+/* ---------------------------------------- */
+/*   01 - General & Basic Styles			*/
+/*   02 - Navbar							*/
+/*   03 - Button							*/
+/*   03 - Text							    */
+/*   03 - Margins							*/
+/*   04 - Footer							*/
+
+
+
+/*---------- General & Basic Styles -----------*/
+body{
+  font-family: 'Jura', sans-serif !important;
+}
+
+/*------------------ Navbar -------------------*/
+nav{
+  -webkit-box-shadow: 0px 2px 14px -5px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 2px 14px -5px rgba(0,0,0,0.75);
+  box-shadow: 0px 2px 14px -5px rgba(0,0,0,0.75);
+}
+
+/*------------------ Button -------------------*/
+.btn-download{
+  background-color: #F92C55;
+  color:#fff;
+  -webkit-box-shadow: 0px 3px 12px -1px rgba(249,44,85,1);
+  -moz-box-shadow: 0px 3px 12px -1px rgba(249,44,85,1);
+  box-shadow: 0px 3px 12px -1px rgba(249,44,85,1);
+}
+
+/*------------------- Text --------------------*/
+.text-primary{
+  color:#F92C55 !important;
+}
+.text-heading{
+  font-size: 4vw;
+  margin-top: 20px;
+}
+
+/*------------------- Margin -------------------*/
+.mb-100{
+  margin-bottom: 200px;
+}
+
+/*--------------------Footer -------------------*/
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  text-align: center;
+  height: 50px;
+  padding-top: 12px;
+}

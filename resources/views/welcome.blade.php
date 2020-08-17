@@ -1,100 +1,70 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.app')
 
-        <title>Laravel</title>
+@section('title')
+    <!-- page-title -->
+    <title>TikBulk - TikTok Bulk Videos Downloader</title>
+@endsection
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+@section('content')
+    <!-- container-start -->
+    <div class="container mb-100">
 
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
-
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
+        <!-- row-start -->
+        <div class="row">
+            <div class="col-xl-10 col-lg-10 col-md-10 col-sm-12 col-12 mx-auto">
+                <!-- heading-start -->
+                <div class="text-heading text-primary text-center">
+                    Download <strong>Tiktok Videos</strong> in Bulk
                 </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
+                <!-- heading-end -->
             </div>
         </div>
-    </body>
-</html>
+        <!-- row-end -->
+
+        <!-- row-start -->
+        <div class="row">
+            <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12 col-12 mx-auto">
+
+                <!-- Download-card-start -->
+                <div class="card shadow-sm rounded mt-5">
+                    <div class="card-header">
+                        <img class="img-fluid" src="{{asset('images/tiktok-icon-small.png')}}"> Enter TikTok video URLs
+                    </div>
+                    <div class="card-body">
+                        <form action="{{route('process.videos')}}" method="post">
+                            {{csrf_field()}}
+                            <div class="row">
+                                <div class="col-xl-9 col-lg-8 col-md-8 col-sm-12 col-12">
+                                    <div class="mb-2">
+                                        <input id="form-tags-1" name="videos" type="text" value="https://www.tiktok.com/@dogowner520/video/6852987263463197957">
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-lg-4 col-md-4 col-sm-12 col-12">
+                                    <button class="btn btn-download btn-lg w-100" type="submit"><i class="fa fa-download"></i> Download</button>
+                                </div>
+                            </div>
+                        </form>
+                        <p class="small text-center text-secondary mt-4">The output will be a .zip file containing all videos in .mp4 format</p>
+                    </div>
+                </div>
+                <!-- download-card-end -->
+            </div>
+        </div>
+        <!-- row-end -->
+
+        <!-- row-start -->
+        <div class="row">
+            <div class="col-xl-10 col-lg-10 col-md-10 col-sm-12 col-12 mx-auto">
+                <!-- Including Ad component -->
+                @include('components.ad')
+            </div>
+        </div>
+        <!-- row-end -->
+    </div>
+    <!-- container-end -->
+@endsection
+
+@section('js')
+    <script src="{{asset('js/custom.js')}}"></script>
+@endsection
+

@@ -16,3 +16,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+/*--------- Video Processing Route ---------*/
+Route::post('/process-videos', 'VideoController@process')->name('process.videos');
+
+/*--------- Video Processing Route ---------*/
+Route::get('how-to-download', function (){
+    return view('how-to-download');
+});
