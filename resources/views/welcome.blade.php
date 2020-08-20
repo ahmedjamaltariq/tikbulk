@@ -36,7 +36,7 @@
                             <div class="row">
                                 <div class="col-xl-9 col-lg-8 col-md-8 col-sm-12 col-12">
                                     <div class="mb-2">
-                                        <input id="form-tags-1" name="videos" type="text" value="https://www.tiktok.com/@dogowner520/video/6852987263463197957">
+                                        <input id="form-tags-1" name="videos" type="text" value="https://www.tiktok.com/@dogowner520/video/6852987263463197957" required>
                                     </div>
                                 </div>
                                 <div class="col-xl-3 col-lg-4 col-md-4 col-sm-12 col-12">
